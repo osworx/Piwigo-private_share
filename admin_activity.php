@@ -100,6 +100,9 @@ while ($row = pwg_db_fetch_assoc($result))
 foreach ($shares as &$share)
 {
   $share['user'] = 'deleted';
+  // bugfix mic
+  $share['expired'] = false;
+  
   if (isset($username_of[ $share['user_id'] ]))
   {
     $share['user'] = $username_of[ $share['user_id'] ];
